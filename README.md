@@ -6,12 +6,10 @@ For bypassing pageguard include https://github.com/zieserl/valorant_offsets/blob
 ```cpp
 uintptr_t decrypt_uworld(uintptr_t pid, uintptr_t val_base) {
 	const auto key = read_memory<uintptr_t>(pid, val_base + uworld_key);
-#pragma pack(push, 1)
 	struct State
 	{
-		uintptr_t Keys[7];
+		uintptr_t keys[7];
 	};
-#pragma pack(pop)
 	const auto state = read_memory<State>(pid, valBase + uworld_state);
 	const auto uworld = decrypt_uworld(key, (const uintptr_t*)&state);
 	return read_memory<uintptr_t>(pid, uworld);
