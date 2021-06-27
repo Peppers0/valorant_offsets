@@ -22,7 +22,10 @@ namespace offsets {
 	constexpr uintptr_t actor_count = 0xB8; // persistent_level + actor_count // TYPE=int
 
 	constexpr uintptr_t unique_id = 0x38; // actor + actor_id // TYPE=uintptr_t
-	constexpr uintptr_t mesh_component = 0x410; // actor + mesh // TYPE=uintptr_t
+	constexpr uintptr_t mesh_component = 0x410; // actor + mesh_component // TYPE=uintptr_t
+	constexpr uintptr_t bone_array = 0x558; // mesh_component + bone_array // TYPE=uintptr_t
+	constexpr uintptr_t bone_count = 0x560; // actor + bone_count // TYPE=uintptr_t
+	constexpr uintptr_t component_to_world = 0x250; // mesh_component + component_to_world // TYPE=uintptr_t
 	constexpr uintptr_t root_component = 0x210; // actor + root_component // TYPE=uintptr_t
 	constexpr uintptr_t root_position = 0x164; // root_component + root_position // TYPE=Vector3
 	constexpr uintptr_t damage_handler = 0x928; // actor/local_player_pawn + damage_handler // TYPE=uintptr_t
